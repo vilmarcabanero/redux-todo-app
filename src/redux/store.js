@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import todolist from 'redux/reducers/todolist';
+import toDoList from 'redux/reducers/todolist';
 
 export default combineReducers({
-	todolist,
+	toDoList, //Heto dapat ang nasa useSelector(state => state.toDoList)
 });

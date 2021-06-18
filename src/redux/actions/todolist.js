@@ -2,18 +2,22 @@ import * as api from 'redux/api/todolist';
 import * as c from 'utils/constants';
 // import data from 'data/todo.json';
 
-export const getTodoList = () => async dispatch => {
+export const getActiveTodoList = () => async dispatch => {
 	try {
-		const { data } = await api.getTodoList();
-		dispatch({ type: c.GET_TODO_LIST, payload: data });
-		// console.log('Line 8',data)
+		const { data } = await api.getActiveTodolist();
+		dispatch({ type: c.GET_ACTIVE_TODOLIST, payload: data });
+		// console.log('Line 9 data from getActiveTodolist response: ', data);
 	} catch (err) {
 		console.log(err);
 	}
 };
 
-// export const getTodoList = () => dispatch => {
-// 	dispatch({ type: c.GET_TODO_LIST, payload: data });
-// 	// console.log('Line 8',data)
-// 	console.log(data);
-// };
+export const archiveCompleteTodolist = () => async dispatch => {
+	try {
+		const { data } = await api.archiveCompleteTodolist();
+		dispatch({ type: c.ARCHIVE_COMPLETE_TODOLIST, payload: data });
+		console.log('Line 19 data from archiveCompleteTodolist response: ', data);
+	} catch (err) {
+		console.log(err);
+	}
+};

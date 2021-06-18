@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles.css';
-import TodolistContext from 'context/todolist';
+import { useSelector } from 'react-redux';
 
 const ToDo = ({ todo }) => {
-	const { toDoList } = React.useContext(TodolistContext);
+	const toDoList = useSelector(state => state.toDoList);
 
 	const url = 'http://localhost:4000/api/todolist';
 
@@ -13,7 +13,7 @@ const ToDo = ({ todo }) => {
 		})
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
+				console.log(`makeComplete request's response: `, data);
 			})
 			.catch(err => console.log(err));
 	};
@@ -24,7 +24,7 @@ const ToDo = ({ todo }) => {
 		})
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
+				console.log(`makeIncomplete request's response: `, data);
 			})
 			.catch(err => console.log(err));
 	};

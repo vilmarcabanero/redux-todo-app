@@ -1,18 +1,16 @@
 // import Counter from 'components/Counter';
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import TodoPage from 'pages/TodoPage';
 
-import { useDispatch } from 'react-redux';
-import { getTodoList } from 'redux/actions/todolist';
-
+// import { useDispatch } from 'react-redux';
+// import { getActiveTodoList } from 'redux/actions/todolist';
 
 const App = () => {
+	// const dispatch = useDispatch();
+	// useEffect(() => {
+	// 	dispatch(getActiveTodoList());
+	// }, [dispatch]);
 
-
-	const dispatch = useDispatch();
-	useEffect(() => {
-		dispatch(getTodoList());
-	}, [dispatch]);
 	return (
 		<Fragment>
 			{/* <Counter /> */}
